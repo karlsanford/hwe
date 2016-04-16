@@ -1,0 +1,28 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "description": "hello world express app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlsanford/hwe.git"
+  },
+  "keywords": [
+    "express",
+    "node"
+  ],
+  "author": "karl sanford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karlsanford/hwe/issues"
+  },
+  "homepage": "https://github.com/karlsanford/hwe#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4"
+  }
+}
