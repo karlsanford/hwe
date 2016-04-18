@@ -4,6 +4,7 @@ function contactController($scope,$http){
 	$http.get('/api/guests').success(function(data){
 		$scope.guests = data;
 	});
+	$scope.displayForm = true;
 	$scope.isAdmin = false;
 	$scope.message = "Contact";
 	$scope.createGuest = function(){
@@ -18,6 +19,8 @@ function contactController($scope,$http){
 			$scope.guestName = '';
 			$scope.guestEmail = '';
 			$scope.guestMessage = '';
+			$scope.displayForm = false;
+			$scope.message = 'Thanks for the message.'
 		})
 	}
 }
