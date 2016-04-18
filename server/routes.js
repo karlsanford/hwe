@@ -1,14 +1,8 @@
 var express = require('express'),
-	router	= express.Router();
+	router	= express.Router(),
+	Thing = require('./models/things');
 
 //static data
-var meetups = [
-	{id:1, name:'foo'},
-	{id:2, name: 'bar'},
-	{id:3, name: 'naz'}
-];
-
-
 
 
 //routes
@@ -25,13 +19,21 @@ router.get('/users/:id',function(req,res){
 });
 
 router.get('/api/meetups',function(req,res){
-	res.send(meetups);
+	Thing.find(function(err, things){
+		if(err) return console.error(err);
+		res.send(things);
+	})
 });
 router.post('/api/meetups',function(req,res){
 	console.log(req.body);
 	console.log(new Date());
-	meetups.push({name:req.body.name, id: meetups.length + 1});
-	res.send(meetups);
+	var thisThing = new Thing(req.body);
+	thisThing.save(function(err, thisThing){
+		if(err) return console.error(err);
+		res.send(thisThing);
+	});
+	//meetups.push({name:req.body.name, id: meetups.length + 1});
+	//res.send(meetups);
 });
 
 module.exports = router;

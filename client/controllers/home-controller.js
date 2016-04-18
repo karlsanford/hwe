@@ -10,7 +10,7 @@ function homeController($scope,$http){
 	$scope.createMeetup = function(){
 		$http.post('/api/meetups',{name:$scope.meetupName}).success(function(data){
 			console.log(data);
-			$scope.meetups = data;
+			$scope.meetups.push(data);
 			$scope.meetupName = '';
 		})
 	}
