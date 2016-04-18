@@ -1,3 +1,78 @@
+body {
+    font-family: karla, sans-serif;
+}
 .navbar {
     border-radius: 0px !important;
+    margin-bottom: 0px;
+}
+.navbar-default {
+    background-color: #fff;
+    border-color: #fff;
+    padding: 20px 50px;
+}
+.navbar-brand {
+    margin-top: -28px;
+}
+
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#img-container {
+    position:relative;
+    display:inline-block;
+    text-align:center;
+    border:0px solid red;
+    /* background:url('http://jsfiddle.net/img/initializing.png') no-repeat;
+    width:186px;
+    height:157px;*/
+}
+
+.floater {
+    position:absolute;
+    top:50%;
+    left:10px;
+    right:10px;
+    width:auto;
+    height:30px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 880px;
+    box-sizing: border-box;
+    display: block;
+
+}
+
+.floater .button {
+    color: white;
+    border: 2px solid white;
+    font-size: large;
+    padding: 10px;
+    margin: 20px;
+}
+
+.floater .button:hover {
+    color: black;
+    background-color: white;
+}
+
+.floater a:hover {
+    text-decoration: none;
+}
+
+.form-control {
+    border-color: black;
+    border-radius: 0px;
+}
+
+.black-box {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 50px auto;
+}
+
+.black-box h1{
+    padding: 0px;
 }

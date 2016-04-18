@@ -1,7 +1,8 @@
 var express = require('express'),
 	router	= express.Router(),
 	Thing = require('./models/things'),
-	Guest = require('./models/guests');
+	Guest = require('./models/guests'),
+	Engagement = require('./models/engagements');
 
 //static data
 
@@ -32,11 +33,20 @@ router.post('/api/guests',function(req,res){
 	});
 });
 
+router.post('/api/engagements',function(req,res){
+	var newEngagement = new Engagement(req.body);
+	newEngagement.save(function(err, engagement){
+		if(err) return console.error(err);
+		res.send(engagement);
+	});
+});
+
+//meetups
 router.get('/api/meetups',function(req,res){
 	Thing.find(function(err, things){
 		if(err) return console.error(err);
 		res.send(things);
-	})
+	});
 });
 router.post('/api/meetups',function(req,res){
 	console.log(req.body);
@@ -46,8 +56,6 @@ router.post('/api/meetups',function(req,res){
 		if(err) return console.error(err);
 		res.send(thisThing);
 	});
-	//meetups.push({name:req.body.name, id: meetups.length + 1});
-	//res.send(meetups);
 });
 
 module.exports = router;

@@ -1,0 +1,46 @@
+<div ng-controller="contactController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" col-md-offset-2>
+
+            </div>
+        </div>
+        <h2>{{message}}</h2>
+
+        <table class="table table-striped" ng-show="isAdmin">
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="guest in guests">
+                <td>{{guest.name}}</td>
+                <td>{{guest.email}}</td>
+                <td>{{guest.message}}</td>
+                <td>{{guest._id}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <form ng-submit="createGuest()">
+            <div class="form-group">
+                <label for="inputGuestName">Name</label>
+                <input ng-model='guestName' type="text" class="form-control" id="inputGuestName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="inputGuestEmail">Email Address</label>
+                <input ng-model='guestEmail' type="email" class="form-control" id="inputGuestEmail" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="inputGuestMessage">Message</label>
+                <input ng-model='guestMessage' type="text" class="form-control" id="inputGuestMessage" placeholder="Message">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Sign</button>
+        </form>
+    </div>
+</div>

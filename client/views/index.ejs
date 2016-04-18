@@ -1,8 +1,14 @@
 <html>
 <head>
-	<title>Home Page</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+	<title>Sanford Consulting</title>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!--Icons-->
     <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
@@ -21,9 +27,10 @@
     <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body ng-app="hweApp">
-    <div class="container">
-        <div class="navbar navbar-inverse">
+<body ng-app="mainApp">
+
+    <div class="container-fluid">
+        <div class="navbar navbar-default">
             <div class="containter-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
@@ -34,42 +41,20 @@
                     </button>
                     <a class="navbar-brand" href="#">
                         <!--<img class="img-responsive" src="icon/apple-icon-72x72.png" alt="">-->
-                        <span>Sanford Consulting</span>
+                        <span><img class="img-responsive" src="images/Logo-white-stroke-82x75.png" alt=""></span>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-nav">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
+
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Link</a></li>
+                        <li><a ui-sref="home">Home</a></li>
+                        <li><a ui-sref="about">About</a></li>
+                        <li><a ui-sref="contact">Contact</a></li>
+                        <li><a ui-sref="engage">Engage</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#" disabled>Not yet Available</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -77,58 +62,10 @@
             </div>
 
         </div>
+        <div ui-view></div>
         <div>
-            //main content
-            <div ng-controller="homeController">
-
-                <h1>{{message}}</h1>
-
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>ID</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="guest in guests">
-                        <td>
-                            {{guest.name}}
-                        </td>
-                        <td>
-                            {{guest.email}}
-                        </td>
-                        <td>
-                            {{guest.message}}
-                        </td>
-                        <td>
-                            {{guest._id}}
-                        </td>
-                    </tr>
-                    </tbody>
 
 
-                </table>
-
-                <form ng-submit="createGuest()">
-                    <div class="form-group">
-                        <label for="inputGuestName">Name</label>
-                        <input ng-model='guestName' type="text" class="form-control" id="inputGuestName" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputGuestEmail">Email Address</label>
-                        <input ng-model='guestEmail' type="email" class="form-control" id="inputGuestEmail" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputGuestMessage">Message</label>
-                        <input ng-model='guestMessage' type="text" class="form-control" id="inputGuestMessage" placeholder="Message">
-                    </div>
-
-                    <button class="btn btn-primary" type="submit">Sign</button>
-                </form>
-
-
-            </div>
         </div>
     </div>
 
@@ -136,7 +73,10 @@
 	<script type="text/javascript" src="jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="angular/angular.js"></script>
-	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="controllers/home-controller.js"></script>
+    <script type="text/javascript" src="angular-ui-router\release\angular-ui-router.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="controllers/contact-controller.js"></script>
+    <script type="text/javascript" src="controllers/engage-controller.js"></script>
+</
 </body>
 </html>

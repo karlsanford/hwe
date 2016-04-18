@@ -1,12 +1,11 @@
-app.controller('homeController',['$scope','$http',homeController]);
+app.controller('contactController',['$scope','$http',contactController]);
 
-
-function homeController($scope,$http){
+function contactController($scope,$http){
 	$http.get('/api/guests').success(function(data){
 		$scope.guests = data;
 	});
-	
-	$scope.message = "Sign the guest book!";
+	$scope.isAdmin = false;
+	$scope.message = "Contact";
 	$scope.createGuest = function(){
 		var newGuest = {
 			name: $scope.guestName,
