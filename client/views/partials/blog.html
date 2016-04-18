@@ -1,0 +1,68 @@
+<div class="container" ng-controller="blogController">
+    <div class="row" style="height: 50px"></div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="blog-menu">
+                <li ng-repeat="blog in blogs">
+                    <a ng-click="editBlog(blog)"><i class="fa fa-pencil"></i></a>
+                    <a ng-click="loadBlog(blog)">{{blog.title}}</a>
+                </li>
+            </ul>
+            <button class="btn btn-primary " ng-click="newBlog()"><i  class="fa fa-plus"></i></button>
+        </div>
+        <div class="col-md-8">
+            <div ng-hide="editmode">
+                <h1>{{blog.title}}</h1>
+                <p>{{blog.body}}</p>
+
+                <button class="btn btn-primary pull-right" ng-click="editBlog()">
+                    <i class="fa fa-pencil"></i>
+                </button>
+
+            </div>
+            <div ng-show="editmode">
+                <form name="blogForm" ng-model="blog" ng-submit="saveBlog()">
+                    <div class="form-group">
+                        <label for="inputBlogTitle">Title</label>
+                        <input id="inputBlogTitle" class="form-control" type="text" ng-model="blog.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputBlogBody">Body</label>
+                        <textarea id="inputBlogBody" class="form-control" rows="12" type="text" ng-model="blog.body"/>
+                    </div>
+                    <button class="btn btn-primary pull-right" type="submit">{{action}}</button>
+                    <button class="btn btn-primary pull-right" type="cancel">Cancel</button>
+                </form>
+
+            </div>
+            <div class="clearfix"></div>
+            <div ng-hide="editmode">
+                <form ng-submit="addComment()">
+                    <div class="form-group">
+                        <label for="inputComment">Comment</label>
+                        <textarea ng-model="comment" id="inputComment" class="form-control" rows="5"/>
+                    </div>
+                    <button class="btn btn-primary pull-right" type="submit"><i class="fa fa-comment"></i></button>
+                </form>
+            </div>
+            <div ng-hide="editmode">
+                <div class="blog-comment" ng-repeat="comment in blog.comments | orderBy: 'comment.date'">
+                    <div class="row">
+                        <p >
+                            <span class="text-uppercase"><strong>{{comment.userId}} says:</strong></span>
+                            <span>{{comment.body}}</span>
+
+                        </p>
+                    </div>
+                    <div class="row">
+                        <em>{{comment.date | date:'medium'}}</em>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <button ng-click="logscope()" class="btn">log scope</button>
+    </div>
+</div>

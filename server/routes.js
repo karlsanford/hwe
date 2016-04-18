@@ -2,7 +2,9 @@ var express = require('express'),
 	router	= express.Router(),
 	Thing = require('./models/things'),
 	Guest = require('./models/guests'),
-	Engagement = require('./models/engagements');
+	Engagement = require('./models/engagements'),
+	Blog = require('./models/blogs');
+
 
 //static data
 
@@ -38,6 +40,28 @@ router.post('/api/engagements',function(req,res){
 	newEngagement.save(function(err, engagement){
 		if(err) return console.error(err);
 		res.send(engagement);
+	});
+});
+
+//blogs
+router.get('/api/blogs',function(req,res){
+	Blog.find(function(err, blogs){
+		if(err) return console.error(err);
+		res.send(blogs);
+	})
+});
+
+router.post('/api/blogs',function(req,res){
+	var newBlog = new Blog(req.body);
+	newBlog.save(function(err, blog){
+		res.send(blog);
+	});
+});
+
+router.put('/api/blogs',function(req,res){
+	Blog.findOneAndUpdate({_id:req.body._id},req.body,function(err,blog){
+		if(err) return console.error(err);
+		res.send(blog);
 	});
 });
 

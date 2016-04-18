@@ -1,7 +1,15 @@
 body {
     font-family: karla, sans-serif;
-    width:100%;
-
+}
+.dropdown-menu {
+  padding: 10px;
+    min-width: 230px;
+}
+.input-group-addon {
+    color: white;
+    background-color: #333;
+    border-radius: 0px;
+    border: 2px solid black;
 }
 
 /************************/
@@ -16,10 +24,10 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    -webkit-transition:all .25s ease-in-out;
-    -moz-transition:all .25s ease-in-out;
-    -o-transition:all .25s ease-in-out;
-    transition:all .25s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
 }
 
 /*[ui-view].ng-enter {
@@ -62,13 +70,22 @@ body {
     -moz-transform:translate3d(100px, 0, 0);
     transform:translate3d(100px, 0, 0);
 }
-
+.blog-menu {
+    list-style: none;
+}
+.blog-menu li {
+    margin-top: 10px;
+}
+.blog-comment {
+    margin: 30px 10px;
+}
 /************************/
 /*******buttons**********/
 /************************/
 
 .btn {
     border-radius: 0px;
+    margin: 5px;
 }
 
 .btn-primary {

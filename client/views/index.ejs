@@ -3,6 +3,8 @@
 	<title>Sanford Consulting</title>
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+    <link href='font-awesome/css/font-awesome.css' rel='stylesheet' type='text/css'>
+
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
@@ -27,7 +29,7 @@
     <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body ng-app="mainApp">
+<body ng-app="mainApp" controller="mainController">
 
     <div class="container-fluid">
         <div class="navbar navbar-default">
@@ -51,10 +53,39 @@
                         <li><a ui-sref="about">About</a></li>
                         <li><a ui-sref="contact">Contact</a></li>
                         <li><a ui-sref="engage">Engage</a></li>
+                        <li><a ui-sref="blog">Blog</a></li>
+                        <li ng-show="loggedin">UN:{{username}}</li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" disabled>Not yet Available</a></li>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" ng-hide="loggedin">
+                                <li>
+                                    <form ng-submit="login()">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                                <input class="form-control" type="text" id="username" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-asterisk "></i></div>
+                                                <input class="form-control" ng-model="password" type="password" id="password" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div ng-show="signupMode" class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-addon"><i class="fa fa-asterisk "></i></div>
+                                                <input class="form-control" ng-model="confirmPassword" type="password" id="confirmPassword" placeholder="Confirm Password">
+                                            </div>
+                                        </div>
+                                        <a ng-show="signupMode" ng-click="signupMode = false">Log in</a>
+                                        <a ng-hide="signupMode" ng-click="signupMode = true">Sign up</a>
+                                        <button ng-hide="signupMode" ng-click="login()" class="btn btn-primary pull-right">Login</button>
+                                        <button ng-show="signupMode" ng-click="signup()" class="btn btn-primary pull-right">Sign up</button>
+                                    </form>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -81,6 +112,8 @@
     <script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="controllers/contact-controller.js"></script>
     <script type="text/javascript" src="controllers/engage-controller.js"></script>
+    <script type="text/javascript" src="controllers/blog-controller.js"></script>
+    <script type="text/javascript" src="controllers/main-controller.js"></script>
 </
 </body>
 </html>

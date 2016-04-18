@@ -19,5 +19,9 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state('engage',{
             url: '/engage',
             templateUrl: "views/partials/engage.html"
+        })
+        .state('blog',{
+            url: '/blog',
+            templateUrl: "views/partials/blog.html"
         });
 });
