@@ -1,7 +1,5 @@
 var express = require('express'),
-	router	= express.Router(),
-	bodyParser = require('body-parser'),
-	app = express();
+	router	= express.Router();
 
 //static data
 var meetups = [
@@ -10,11 +8,7 @@ var meetups = [
 	{id:3, name: 'naz'}
 ];
 
-//middle ware
-app.use(bodyParser.json());
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
 
 
 //routes
@@ -35,8 +29,9 @@ router.get('/api/meetups',function(req,res){
 });
 router.post('/api/meetups',function(req,res){
 	console.log(req.body);
+	console.log(new Date());
 	meetups.push({name:req.body.name, id: meetups.length + 1});
-	res.send(req.body);
+	res.send(meetups);
 });
 
 module.exports = router;

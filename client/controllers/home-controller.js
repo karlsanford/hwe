@@ -9,7 +9,9 @@ function homeController($scope,$http){
 	$scope.message = "hello from angular";
 	$scope.createMeetup = function(){
 		$http.post('/api/meetups',{name:$scope.meetupName}).success(function(data){
-			$scope.meetups.push(data);
+			console.log(data);
+			$scope.meetups = data;
+			$scope.meetupName = '';
 		})
 	}
 }
