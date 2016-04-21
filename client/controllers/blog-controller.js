@@ -82,6 +82,7 @@ function blogController($scope,$http){
         if(!$scope.blog._id){
             $http.post('/api/blogs',$scope.blog).success(function(data){
                 $scope.blogs.push(data);
+                $scope.blog = data;
             });
         } else {
             $http.put('/api/blogs',$scope.blog).success(function(data){
