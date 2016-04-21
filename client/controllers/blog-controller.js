@@ -13,6 +13,7 @@ function blogController($scope,$http){
     $scope.loadBlog = loadBlog;
     $scope.newBlog = newBlog;
     $scope.editBlog = editBlog;
+    $scope.deleteBlog = deleteBlog;
     $scope.dirtyStatus = dirtyStatus;
     //$scope.saveEdit = saveEdit;
     $scope.blogs = [];
@@ -46,6 +47,25 @@ function blogController($scope,$http){
         dirtyCheck('newBlog');
         editMode(true);
         $scope.blog = {};
+
+    }
+    function deleteBlog(blog){
+        console.log(blog);
+        console.log('deleteblog');
+        $http.delete('/api/blogs/'+ blog._id)
+            .success(function(data) {
+                console.log(data);
+                $scope.blogs.forEach(function (el, index, array) {
+                    console.log(el);
+                    console.log(blog);
+                    console.log($scope.blogs);
+                    if (el._id == blog._id) array.splice(index, 1);
+                });
+            })
+            .error(function(error, status){
+                console.log(error);
+                console.log(status);
+            });
 
     }
     function dirtyCheck(caller){

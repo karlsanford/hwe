@@ -1,4 +1,4 @@
-app.controller('mainController',[$scope,$http,mainController]);
+app.controller('mainController',['$scope','$http',mainController]);
 
 function mainController($scope,$http){
     $scope.login = login;
@@ -16,7 +16,7 @@ function mainController($scope,$http){
         });
     }
 
-     function(){
-
+     function signup(){
+        return true;
     }
 }

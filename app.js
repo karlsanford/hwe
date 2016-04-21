@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser'); //not installed
+//var cookieParser = require('cookie-parser'); //not installed
 var app = express();
 
 var mongoose = require('mongoose');
@@ -21,10 +21,10 @@ app.set('views', path.join(__dirname, 'client/views'));
 
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // must be after body-parser
 var router = require('./server/routes.js');

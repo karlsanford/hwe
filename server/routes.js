@@ -65,6 +65,18 @@ router.put('/api/blogs',function(req,res){
 	});
 });
 
+router.delete('/api/blogs/:id',function(req,res){
+	//console.log(req);
+	Blog.findByIdAndRemove({_id:req.params.id},function(err, doc, next){
+		console.log(req.params.id);
+		if(err){
+			res.send(err);
+			return console.error(err);
+		}
+		res.send(doc);
+	});
+});
+
 //meetups
 router.get('/api/meetups',function(req,res){
 	Thing.find(function(err, things){

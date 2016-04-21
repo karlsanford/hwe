@@ -2,16 +2,20 @@
     <div class="row" style="height: 50px"></div>
 
     <div class="row">
+        <!--blog list-->
         <div class="col-md-4">
             <ul class="blog-menu">
                 <li ng-repeat="blog in blogs">
+                    <a ng-click="deleteBlog(blog)"><i class="fa fa-close"></i></a>
                     <a ng-click="editBlog(blog)"><i class="fa fa-pencil"></i></a>
                     <a ng-click="loadBlog(blog)">{{blog.title}}</a>
                 </li>
             </ul>
             <button class="btn btn-primary " ng-click="newBlog()"><i  class="fa fa-plus"></i></button>
         </div>
+
         <div class="col-md-8">
+            <!--blog display-->
             <div ng-hide="editmode">
                 <h1>{{blog.title}}</h1>
                 <p>{{blog.body}}</p>
@@ -21,6 +25,7 @@
                 </button>
 
             </div>
+            <!--blog edit-->
             <div ng-show="editmode">
                 <form name="blogForm" ng-model="blog" ng-submit="saveBlog()">
                     <div class="form-group">
