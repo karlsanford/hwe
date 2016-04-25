@@ -11,6 +11,9 @@ body {
     border-radius: 0px;
     border: 2px solid black;
 }
+a:hover{
+    cursor: pointer;
+}
 
 /************************/
 /*******animation********/
@@ -123,6 +126,7 @@ body {
     display:inline-block;
     text-align:center;
     border:0px solid red;
+    
     /* background:url('http://jsfiddle.net/img/initializing.png') no-repeat;
     width:186px;
     height:157px;*/

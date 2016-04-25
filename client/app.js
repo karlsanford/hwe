@@ -23,5 +23,9 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state('blog',{
             url: '/blog',
             templateUrl: "views/partials/blog.html"
+        }).state('account',{
+            url: '/account',
+            templateUrl: "views/partials/account.html"
         });
+
 });
