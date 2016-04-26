@@ -11,9 +11,6 @@ require('./server/config/express')(app,config);
 //init mongoose
 require('./server/config/mongoose')(config);
 
-//init passport
-//require('./server/config/passport')();
-
 //init routes, which init controllers, which init models
 require('./server/config/routes')(app);
 

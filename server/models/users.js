@@ -21,6 +21,7 @@ var emailSchema = mongoose.Schema({
 
 var userSchema = mongoose.Schema({
     userName: String,
+    salt: String,
     passHash: String,
     firstName: String,
     lastName: String,

@@ -3,19 +3,16 @@ module.exports = function(app){
 		router = express.Router(),
 		guestsCtrl = require('../controllers/guests-controller'),
 		engagementsCtrl = require('../controllers/engagements-controller'),
-		blogCtrl = require('../controllers/blogs-controller'),
-		passport = require('passport');
+		blogsCtrl = require('../controllers/blogs-controller');
 
-//init client side
+
+//Bootstrap client app by rendering main page
 	router.get('/',function(req,res){
 		res.render('index');
 	});
 
+//Authentication
 
-	router.post('/api/users/authenticate',passport.authenticate('local'),function(req,res){
-		res.send('response from post to authenticate');
-		res.send(result);
-	});
 
 //Guests
 	router.get('/api/guests',guestsCtrl.findAll);
@@ -24,13 +21,13 @@ module.exports = function(app){
 //Engagements
 	router.post('/api/engagements',engagementsCtrl.create);
 
-//blogs
-	router.get('/api/blogs',blogCtrl.getAll);
-	router.post('/api/blogs',blogCtrl.create);
-	router.put('/api/blogs',blogCtrl.update);
-	router.delete('/api/blogs/:id',blogCtrl.del);
+//Blogs
+	router.get('/api/blogs',blogsCtrl.getAll);
+	router.post('/api/blogs',blogsCtrl.create);
+	router.put('/api/blogs',blogsCtrl.update);
+	router.delete('/api/blogs/:id',blogsCtrl.del);
 
-//config
+//Tell express to use router for routing
 	app.use('/',router);
 };
 
