@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5037f81b-7170-4872-ac58-53b316db73de" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/images/319.PNG" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/partials/resume.html" afterPath="$PROJECT_DIR$/client/views/partials/resume.html" />
     </list>
     <ignored path="hwe.iws" />
@@ -28,8 +29,8 @@
           <file leaf-file-name="resume.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/views/partials/resume.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.62355655">
-                  <caret line="159" column="72" selection-start-line="159" selection-start-column="72" selection-end-line="159" selection-end-column="72" />
+                <state vertical-scroll-proportion="0.7621247">
+                  <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -851,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/views/partials/resume.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62355655">
-          <caret line="159" column="72" selection-start-line="159" selection-start-column="72" selection-end-line="159" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.7621247">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
           <folding />
         </state>
       </provider>
