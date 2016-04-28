@@ -1,9 +1,12 @@
-module.exports = function(app){
+module.exports = function(app, passport){
 	var express = require('express'),
 		router = express.Router(),
 		guestsCtrl = require('../controllers/guests-controller'),
 		engagementsCtrl = require('../controllers/engagements-controller'),
-		blogsCtrl = require('../controllers/blogs-controller');
+		blogsCtrl = require('../controllers/blogs-controller'),
+		usersCtrl = require('../controllers/users-controller');
+		//temp
+		//passport = require('passport');
 
 
 //Bootstrap client app by rendering main page
@@ -11,8 +14,22 @@ module.exports = function(app){
 		res.render('index');
 	});
 
-//Authentication
 
+//Users
+	router.get('/api/users',usersCtrl.getAll);
+	router.post('/api/users',usersCtrl.create);
+
+	router.post('/api/users/signup',passport.authenticate('local-signup',{
+		successRedirect : '/',
+		failureRedirect : '/',
+		failureFlash: true
+	}));
+
+	router.post('/api/users/login',passport.authenticate('local-login',{
+		successRedirect : '/',
+		failureRedirect : '/',
+		failureFlash: true
+	}));
 
 //Guests
 	router.get('/api/guests',guestsCtrl.findAll);

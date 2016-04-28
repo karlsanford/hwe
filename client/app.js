@@ -26,6 +26,12 @@ app.config(function($stateProvider, $urlRouterProvider){
         }).state('account',{
             url: '/account',
             templateUrl: "views/partials/account.html"
-        });
+        }).state('users',{
+        url: '/users',
+        templateUrl: "views/partials/users.html"
+        }).state('resume',{
+        url: '/resume',
+        templateUrl: "views/partials/resume.html"
+    });
 
 });

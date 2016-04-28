@@ -1,0 +1,30 @@
+<div class="container" ng-controller="userController">
+    <h1>{{title}}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>username</th>
+                <th>password</th>
+                <th>_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user._id}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form ng-submit="createUser()">
+        <div class="form-group">
+            <label for="inputUsername">Username</label>
+            <input class="form-control" type="text" id="inputUsername" ng-model="username"/>
+        </div>
+        <div class="form-group">
+            <label for="inputUsername">Password</label>
+            <input class="form-control" type="text" id="inputPassword" ng-model="password"/>
+        </div>
+        <button class="btn" type="submit">Save</button>
+    </form>
+</div>

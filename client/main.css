@@ -1,5 +1,8 @@
 body {
     font-family: karla, sans-serif;
+    padding-top: 91px;
+    padding-bottom:80px;
+    border-radius: 0px !important;
 }
 .dropdown-menu {
   padding: 10px;
@@ -22,6 +25,7 @@ a:hover{
 .ui-view-container {
     position: relative;
     height: 65px;
+    display: block;
 }
 [ui-view].ng-enter, [ui-view].ng-leave {
     position: absolute;
@@ -182,4 +186,62 @@ a:hover{
 
 .black-box h1{
     padding: 0px;
+}
+
+/************************/
+/*******resume**********/
+/************************/
+
+#resume h3 {
+    padding-left: 10px;
+}
+
+#resume h4 {
+    padding-left: 20px;
+}
+
+#resume p {
+    padding-left: 30px;
+}
+
+#resume .panel-primary {
+    border-color: #17375E;
+    border-radius: 0px;
+    width: 100%;
+}
+#resume .panel-primary p{
+    padding-left:0px;
+}
+
+#resume .panel-primary .panel-heading {
+    background-color: #17375E;
+    border-radius: 0px;
+
+}
+
+.equal, .equal > div[class*='col-'] {
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
+.top-buffer-10 {
+     margin-top: 10px;
+ }
+.top-buffer-20 {
+    margin-top: 20px;
+}
+.top-buffer-30 {
+    margin-top: 30px;
+}
+.top-buffer-40 {
+    margin-top: 40px;
+}
+.top-buffer-50 {
+    margin-top: 50px;
+}
+
+.project {
+    background-color: #eee;
+    margin: 5px;
+    padding: 5px;
 }

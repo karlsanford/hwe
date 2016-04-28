@@ -9,6 +9,7 @@ function mainController($scope,$http,$state){
     $scope.signupMode = false;
     $scope.loggedin = false;
     $scope.dropdownmessage = loggedOutMessage;
+    $scope.currentYear = new Date().getYear() + 1900;
 
 
     function login() {

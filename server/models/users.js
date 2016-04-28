@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    bcrypt = require('bcrypt-nodejs');
 
 var addressSchema = mongoose.Schema({
     street1: String,
@@ -20,7 +21,8 @@ var emailSchema = mongoose.Schema({
 
 
 var userSchema = mongoose.Schema({
-    userName: String,
+    username: String,
+    password: String,
     salt: String,
     passHash: String,
     firstName: String,
@@ -29,6 +31,14 @@ var userSchema = mongoose.Schema({
     phones: [phonesSchema],
     emails: [emailSchema]
 });
+
+userSchema.methods.generateHash = function(password){
+  return bcrypt.hashSync(password,bcrypt.genSaltSync(8), null);
+};
+
+userSchema.methods.validPassword = function(password){
+    return bcrypt.compareSync(password,this.password);
+};
 
 var User = mongoose.model('User',userSchema);
 

@@ -32,7 +32,7 @@
 <body ng-app="mainApp" ng-controller="mainController">
 
     <div class="container-fluid">
-        <div class="navbar navbar-default">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="containter-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
@@ -54,6 +54,7 @@
                         <li><a ui-sref="contact">Contact</a></li>
                         <li><a ui-sref="engage">Engage</a></li>
                         <li><a ui-sref="blog">Blog</a></li>
+                        <li><a ui-sref="users">Users</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{dropdownmessage}}&nbsp;<span class="caret"></span></a>
                             <ul class="dropdown-menu" >
@@ -101,8 +102,10 @@
             <div ui-view></div>
         </div>
 
-        <div>
-
+        <div class="navbar navbar-default navbar-fixed-bottom ">
+            <div class="container-fluid">
+                <p class="text-right">&copy; {{currentYear}} Karl Sanford</p>
+            </div>
 
         </div>
     </div>
@@ -118,6 +121,7 @@
     <script type="text/javascript" src="controllers/engage-controller.js"></script>
     <script type="text/javascript" src="controllers/blog-controller.js"></script>
     <script type="text/javascript" src="controllers/main-controller.js"></script>
-</
+    <script type="text/javascript" src="controllers/user-controller.js"></script>
+
 </body>
 </html>
