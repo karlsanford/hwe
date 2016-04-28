@@ -4,7 +4,8 @@ module.exports = function(app, passport){
 		guestsCtrl = require('../controllers/guests-controller'),
 		engagementsCtrl = require('../controllers/engagements-controller'),
 		blogsCtrl = require('../controllers/blogs-controller'),
-		usersCtrl = require('../controllers/users-controller');
+		usersCtrl = require('../controllers/users-controller'),
+		emailCtrl = require('../controllers/email-controller');
 		//temp
 		//passport = require('passport');
 
@@ -43,6 +44,10 @@ module.exports = function(app, passport){
 	router.post('/api/blogs',blogsCtrl.create);
 	router.put('/api/blogs',blogsCtrl.update);
 	router.delete('/api/blogs/:id',blogsCtrl.del);
+
+//Email
+	router.post('/api/email',emailCtrl.sendFromJSON);
+
 
 //Tell express to use router for routing
 	app.use('/',router);

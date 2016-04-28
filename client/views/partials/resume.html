@@ -1,4 +1,26 @@
-<div class="container" id="resume">
+<div class="container" id="resume" ng-controller="resumeController">
+<h1>{{title}}</h1>
+    <!--modal-->
+    <div id="modalResumeWelcome" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">FYI</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This site was built with Angular, Node, Express, and MongoDB.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!--end modal-->
     <div class="row">
         <div class="col-md-2">
             <img src="images/profile.jpg" class="img-responsive" alt="">
@@ -122,7 +144,7 @@
             <div class="project">
                 <h4>Portfolio Page</h4>
                 <p>
-                    This was an educational project done a part of a code camp exercise.
+                    This was an educational project done a part of FreeCodeCamp exercises.
                     It has links to six other sites completed during the front end certification.
                 </p>
                 <p>

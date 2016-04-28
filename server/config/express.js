@@ -13,8 +13,9 @@ module.exports = function(app,config){
     app.set('views', config.rootPath + 'views');
     app.use(morgan('dev'));
     app.use(cookieParser());
-    app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }));
+
     app.use(expressSession({
         secret:'secret',
         resave: false,
