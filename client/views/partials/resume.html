@@ -1,5 +1,5 @@
-<div class="container" id="resume" ng-controller="resumeController">
-<h1>{{title}}</h1>
+<div class="container" id="resume" ng-controller="resumeController" ng-init="">
+
     <!--modal-->
     <div id="modalResumeWelcome" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
@@ -9,18 +9,19 @@
                     <h4 class="modal-title">FYI</h4>
                 </div>
                 <div class="modal-body">
-                    <p>This site was built with Angular, Node, Express, and MongoDB.</p>
+                    <p>This site was built with Angular, Express, Node, and MongoDB.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
     <!--end modal-->
+
+<h1>{{title}}</h1>
     <div class="row">
         <div class="col-md-2">
             <img src="images/profile.jpg" class="img-responsive" alt="">
@@ -35,7 +36,6 @@
                     <img src="images/fcc32.png" alt="">
                 </a>
             </div>
-
             <div class="clearfix"></div>
         </div>
 
@@ -43,7 +43,6 @@
             <div class="row">
                 <h3>Karl Sanford</h3>
                 <p>
-
                     124 N Clinton Ave<br>
                     Dallas, TX 75208<br>
                     <a href="karl@sanfordconsulting.com">karl@sanfordconsulting.com</a><br>
@@ -56,7 +55,7 @@
 
 
     <div class="row  top-buffer-50">
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4  col-xs-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     Summary
@@ -67,7 +66,7 @@
                         technology based problem solving and software development.
                     </p>
                     <p>
-                        In his career Karl has work with everything from VBA to HTML but most
+                        In his career Karl has worked with everything from VBA to HTML but most
                         recently has been focused on JavaScript full-stack web applications.
                     </p>
                     <p>
@@ -139,7 +138,7 @@
     <div class="row">
        <h3><a target="_blank" href="http://sanfordconsulting.com">Sanford Consulting</a> (Nov 2014 - Present)</h3>
     </div>
-    <div class="row">
+   <!-- <div class="row">
         <div class="col-md-6">
             <div class="project">
                 <h4>Portfolio Page</h4>
@@ -224,6 +223,77 @@
             </div>
 
         </div>
+    </div>-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="project">
+                <h4>Portfolio Page</h4>
+                <p>
+                    This was an educational project done a part of FreeCodeCamp exercises.
+                    It has links to six other sites completed during the front end certification.
+                </p>
+                <p>
+                    <a target="_blank" href="http://codepen.io/karlsanford/full/XdapQg">Link to Page</a>
+                </p>
+             </div>
+            <div class="project">
+                <h4>Business Website Development (Mar 2016)</h4>
+                <p>
+                    Built full-stack website for my consulting business.
+                    The site features a contact form, engagement form,
+                    simple blog, and a user framework to support future enhancements.
+                </p>
+                <p>
+                    Its a mean stack app with a persistent backend and client side routing (SPA)
+                    .</p>
+                <p>
+                    Technologies: JavaScript, Angular 1.x, HTML, CSS, MongoDB, Node.js,
+                    Express.js, Inkscape, WebStorm, git, github, Digital Ocean, Bootstrap,
+                    passport.js
+                </p>
+            </div>
+            <div class="project">
+                <h4>Conceptual Design of Commercial Building (Jan 2016 - Present)</h4>
+                <p>
+                    The project was to create a conceptual design inline with the owner's
+                    design taste and coordinate that design with the Architect and Structural Engineer.
+                </p>
+                <p>
+                    Technologies: SketchUp, Layout
+                </p>
+                <img class="img-responsive" src="images/NWelevation4.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="project">
+                <h4>Clothing Brand Technology Architecture and POC</h4>
+                <p>
+                    Worked with a local custom clothier to architect an ecommerce site,
+                    accounting software, payment integration, appointment management, contact management,
+                    and sales order integration.
+                </p>
+            </div>
+             <div class="project">
+                <h4>WooCommerce / Net Suite Integration (Jan-Feb 2015)</h4>
+                <p>Used JavaScript, PHP, and HTML to fix custom sales order integration between
+                    WooCommerce and NetSuite </p>
+                <p>This project also involved site administration such as managing product categories,
+                    product attributes, inventory levels, product adds and deletion</p>
+                <p>Technologies: PHP, JavaScript, HTML, NetSuite, http WebServices</p>
+            </div>
+            <div class="project">
+                <h4>Full Design of Residential Remodel (Jan 2016 - Present)</h4>
+                <p>
+                    Work with the owner to redesign existing structure and addition. Project
+                    also includes ongoing support and consulting on construction management
+                    procedures.
+                </p>
+                <p>
+                    Technologies: SketchUp, Layout
+                </p>
+                <img src="images/clinton319.png" alt="" class="img-responsive">
+            </div>
+        </div>
     </div>
     <div class="row">
         <h3><a target="_blank" href="http://www.gdt.com">General Datatech</a> (Feb 2009 - Nov 2014)</h3>
@@ -250,8 +320,8 @@
                 </p>
             </div>
 
-        </div>
-        <div class="col-md-6">
+        <!--</div>
+        <div class="col-md-6">-->
             <div class="project">
                 <h4>Cisco EDI (Jan 2013 - Dec 2013)</h4>
                 <p>
@@ -270,8 +340,8 @@
             </div>
 
         </div>
-    </div>
-    <div class="row">
+    <!--</div>
+    <div class="row">-->
         <div class="col-md-6">
             <div class="project">
                 <h4>Customer EDI (Jan 2013 - Aug 2013)</h4>
@@ -290,8 +360,8 @@
                 </p>
             </div>
 
-        </div>
-        <div class="col-md-6">
+        <!--</div>
+        <div class="col-md-6">-->
             <div class="project">
                 <h4>GoldOps (Dec 2010 - Nov 2014)</h4>
                 <p>Designed, developed, and supported custom web based SharePoint application

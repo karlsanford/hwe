@@ -1,4 +1,4 @@
-var app = angular.module('mainApp',['ngAnimate','ui.router']);
+var app = angular.module('mainApp',['ngAnimate','ui.router','toastr']);
 
 app.config(function($stateProvider, $urlRouterProvider){
    $urlRouterProvider.otherwise("/home");

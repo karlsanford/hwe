@@ -4,6 +4,9 @@ body {
     padding-bottom:80px;
     border-radius: 0px !important;
 }
+.toast-container {
+    top: 100px;
+}
 .dropdown-menu {
   padding: 10px;
     min-width: 230px;
