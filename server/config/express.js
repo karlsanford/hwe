@@ -10,7 +10,7 @@ var express = require('express'),
 module.exports = function(app,config){
     //config
     app.set('view engine', 'ejs');
-    app.set('views', config.rootPath + 'views');
+    app.set('views', config.rootPath + '/server/views');
     app.use(morgan('dev'));
     app.use(cookieParser());
     app.use(bodyParser.json());

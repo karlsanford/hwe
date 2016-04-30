@@ -1,5 +1,8 @@
 var path = require('path');
-var rootPath = path.normalize( __dirname + '../../');
+var rootPath = path.normalize( __dirname + '/../../');
+
+console.log(__dirname);
+console.log('rootPath: ' + rootPath);
 
 module.exports = {
     development:{

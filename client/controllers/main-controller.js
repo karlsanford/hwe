@@ -18,7 +18,7 @@ function mainController($scope,$http,$state){
             username: $scope.username,
             password: $scope.password
         }
-        $http.post('/api/users/authenticate',user).success(function(data){
+        $http.post('/api/users/login',user).success(function(data){
             if(data.result == "success") {
                 loginSuccess(data);
             }
