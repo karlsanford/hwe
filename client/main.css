@@ -4,9 +4,27 @@ body {
     padding-bottom:80px;
     border-radius: 0px !important;
 }
-.toast-container {
-    top: 100px;
+.skill-tag {
+    background-color: white;
+    border: 1px solid gray;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    color: inherit;
+    border-radius: 16px;
 }
+
+.skill-tag .badge {
+    background-color: gray;
+    color: white;
+
+}
+
+.highlighted {
+    background-color: blue;
+    color: white;
+}
+
 .dropdown-menu {
   padding: 10px;
     min-width: 230px;
