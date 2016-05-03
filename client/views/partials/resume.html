@@ -13,8 +13,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -23,7 +21,7 @@
 
 <h1>{{title}}</h1>
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-3 col-xs-4">
             <img src="images/profile.jpg" class="img-responsive" alt="">
             <div class="top-buffer-10 text-center pull-left">
                 <a target="_blank" href="https://www.linkedin.com/in/karlesanford">
@@ -38,8 +36,7 @@
             </div>
             <div class="clearfix"></div>
         </div>
-
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-3 col-xs-4">
             <div class="row">
                 <h3>Karl Sanford</h3>
                 <p>
@@ -51,87 +48,42 @@
 
             </div>
         </div>
-        <div class="col-md-5 col-md-offset-3">
-            <div ng-repeat="language in languages" class="skill-tag {{language.highlighted}}">{{language.skill}} <span class="badge">{{language.level}}</span> </div>
-
-        </div>
     </div>
 
-
     <div class="row  top-buffer-50">
-        <div class="col-md-4  col-xs-12">
+        <div class="col-md-4  col-sm-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     Summary
                 </div>
                 <div class="panel-body">
-                    <p>
-                        Karl has a multidisciplinary skill-set with an emphasis around
-                        technology-based problem solving and software development.
-                    </p>
-                    <p>
-                        In his career, Karl has worked with everything from VBA to HTML but most
-                        recently has been focused on  full-stack JavaScript web applications.
+                    <p ng-repeat="paragraph in summary.paragraphs">
+                        {{paragraph}}
                     </p>
                 </div>
             </div>
          </div>
-        <div class="col-md-4  col-xs-12">
+        <div class="col-md-4  col-sm-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     Skills
                 </div>
                 <div class="panel-body">
-                    <ul>
-                        <li>Web Development</li>
-                        <li>Database Modeling</li>
-                        <li>UI / UX Design</li>
-                        <li>ERP Design</li>
-                        <li>SharePoint Development</li>
-                        <li>Business Analytics</li>
-                        <li>Data Analytics</li>
-                        <li>Data Mapping</li>
-                        <li>Project Management</li>
-                        <li>Scheduling</li>
-                    </ul>
+                    <p class="skill-tag skill-tag-wide" ng-repeat="skill in skills">
+                        {{skill.title}}
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-sm-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Languages &amp; Tools
+                    Technologies (yrs)
                 </div>
-                <div ng-repeat="language in languages" class="skill-tag">{{language.skill}} <span class="badge">{{language.level}}</span> </div>
-
+                <p ng-repeat="technology in technologies" class="skill-tag">
+                    {{technology.title}} ({{technology.years}})
+                </p>
                 <div class="clearfix"></div>
-                <!--<div class="panel-body">
-                    <ul class="pull-left">
-                        <li>JavaScript</li>
-                        <li>HTML / CSS</li>
-                        <li>AngularJS</li>
-                        <li>Node / Express</li>
-                        <li>MongoDB</li>
-                        <li>GIT</li>
-                        <li>REST</li>
-                        <li>oData</li>
-                        <li>JSON</li>
-                        <li>PHP</li>
-
-                    </ul>
-                    <ul class="pull-left">
-                        <li>MS Excel</li>
-                        <li>MS SQL</li>
-                        <li>VBA</li>
-                        <li>C#</li>
-                        <li>XML</li>
-                        <li>MS Office</li>
-                        <li>MS Project</li>
-                        <li>SharePoint</li>
-                        <li>Visual Studio</li>
-                        <li>Eclipse IDE</li>
-                    </ul>
-                </div>-->
             </div>
         </div>
     </div>
@@ -146,7 +98,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="project">
-                <h4>Portfolio Page</h4>
+                <h4>Portfolio Page (April 2016)</h4>
                 <p>
                     This was an educational project done as part of FreeCodeCamp.com exercises.
                     It has links to six other small projects completed during the front end certification.
@@ -185,7 +137,7 @@
         </div>
         <div class="col-md-6">
             <div class="project">
-                <h4>Clothing Brand Technology Architecture and POC</h4>
+                <h4>Clothing Brand Technology Architecture and POC (Feb 2016)</h4>
                 <p>
                     Worked with a local custom clothier to architect an ecommerce site,
                     accounting software, payment integration, appointment management, contact management,
@@ -238,18 +190,27 @@
                     oData, RESTful Webservices, cXML
                 </p>
             </div>
+            <div class="project">
+                <h4>Active Directory Photo App (Oct 2013)</h4>
+                <p>
+                    Design and developed web application for uploading, cropping, and updating photos
+                    in Active Directory. Project included authorization into AD, C# web services, and an HTML,
+                    JavaScript, and jQuery front end.
+                </p>
+            </div>
 
         <!--</div>
         <div class="col-md-6">-->
             <div class="project">
-                <h4>Cisco EDI (Jan 2013 - Dec 2013)</h4>
+                <h4>Cisco EDI &amp; Sales Interface  (Jan 2013 - Dec 2013)</h4>
                 <p>
-                    Architected and Managed complex Electronic Data Interchange efforts
+                    Architected, Managed, and Developed complex Electronic Data Interchange efforts
                     with a Fortune 100 company and integration with Dynamics SL.
                 </p>
                 <p>
                     Project included coordinating multiple application owners to send, receive,
-                    process, and integrate multiple business documents.
+                    process, and integrate multiple business documents. The project also included
+                    a web interface for employees to view, search, and modify messages as necessary.
                     Challenges included working with highly customized business processes on both
                     sides and integrating into a Dynamics SL ERP without use of native APIs.
                 </p>
@@ -275,7 +236,20 @@
                     sides and integrating into a Dynamics SL ERP without use of native APIs.
                 </p>
                 <p>
-                    Technologies included ANSI-X12, C#, HTML, XAML, XML, XSLT and SQL.
+                    Technologies included ANSI-X12, AS2, C#, HTML, XAML, XML, XSLT, SilverLight,
+                    JavaScript, and SQL.
+                </p>
+            </div>
+            <div class="project">
+                <h4>Excel based Estimating Application (2012)</h4>
+                <p>
+                    Built an excel based estimating application that pull part and pricing
+                    information from a SharePoint List, allowed users to add parts to a quote,
+                    and push the quote to Dynamics SL.
+                </p>
+                <p>
+                    The application also estimated labor based on material usage and automated
+                    many parts of the scope creation.
                 </p>
             </div>
 
@@ -283,12 +257,12 @@
         <div class="col-md-6">-->
             <div class="project">
                 <h4>GoldOps (Dec 2010 - Nov 2014)</h4>
-                <p>Designed, developed, and supported custom web based SharePoint application
+                <p>
+                    Designed, developed, and supported custom web based SharePoint application
                     for 250+ users implementing over $75 million in annual service
                     engagements. This application manages data, documents, and
                     workflow related to Customers, Customer Contacts, Projects,
                     Requests for Quotes, and over 50 other business data objects.
-
                 </p>
                 <p>
                     Project included documenting and developing standardized business
@@ -360,6 +334,13 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Charles Warren</td>
+                    <td>SIS (Strategic Industry Solutions)</td>
+                    <td>Senior Consultant</td>
+                    <td>832-641-2480</td>
+                    <td>cwarren@sisn.com</td>
+                </tr>
+                <tr>
                     <td>JW Roberts</td>
                     <td>GDT (General Datatech)</td>
                     <td>Owner and President</td>
@@ -381,6 +362,13 @@
                     <td>scary@gdt.com</td>
                 </tr>
                 <tr>
+                    <td>Zeeshan Taj</td>
+                    <td>Reach Communications Inc</td>
+                    <td>Founder / Director of Engineering</td>
+                    <td>310-630-9306</td>
+                    <td>zeeshan.taj@gmail.com</td>
+                </tr>
+                <tr>
                     <td>Taylor Bowen</td>
                     <td>AMLI Residential</td>
                     <td>Executive VP</td>
@@ -389,6 +377,11 @@
                 </tr>
             </tbody>
         </table>
+        <div class="row top-buffer-30"></div>
+        <div class="text-center">
+            If you're interested in viewing the source code for this site, please visit the <a href="https://github.com/karlsanford/hwe">repository.</a>
+        </div>
     </div>
     <div class="row top-buffer-50"></div>
+    <div class="row top-buffer-40"></div>
 </div>

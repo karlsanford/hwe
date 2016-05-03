@@ -4,25 +4,32 @@ body {
     padding-bottom:80px;
     border-radius: 0px !important;
 }
-.skill-tag {
-    background-color: white;
-    border: 1px solid gray;
-    float: right;
-    margin: 5px;
-    padding: 5px;
-    color: inherit;
-    border-radius: 16px;
+h1 {
+    font-size: 4.5vmin;
 }
-
-.skill-tag .badge {
-    background-color: gray;
-    color: white;
-
+h2 {
+    font-size: 4vmin;
 }
-
-.highlighted {
-    background-color: blue;
-    color: white;
+h3 {
+    font-size: 3.5vmin;
+}
+h4 {
+    font-size: 3vmin;
+}
+.top-buffer-10 {
+    margin-top: 10px;
+}
+.top-buffer-20 {
+    margin-top: 20px;
+}
+.top-buffer-30 {
+    margin-top: 30px;
+}
+.top-buffer-40 {
+    margin-top: 40px;
+}
+.top-buffer-50 {
+    margin-top: 50px;
 }
 
 .dropdown-menu {
@@ -212,7 +219,9 @@ a:hover{
 /************************/
 /*******resume**********/
 /************************/
-
+li {
+    font-size: 2vmin;
+}
 #resume h3 {
     padding-left: 10px;
 }
@@ -231,7 +240,7 @@ a:hover{
     width: 100%;
 }
 #resume .panel-primary p{
-    padding-left:0px;
+    /*padding-left:0px;*/
 }
 
 #resume .panel-primary .panel-heading {
@@ -245,24 +254,31 @@ a:hover{
     display: flex;
     flex:1 1 auto;
 }
-.top-buffer-10 {
-     margin-top: 10px;
- }
-.top-buffer-20 {
-    margin-top: 20px;
-}
-.top-buffer-30 {
-    margin-top: 30px;
-}
-.top-buffer-40 {
-    margin-top: 40px;
-}
-.top-buffer-50 {
-    margin-top: 50px;
-}
+
 
 .project {
     background-color: #eee;
     margin: 5px;
     padding: 5px;
+    font-size: 1.8vmin;
+}
+
+.skill-tag {
+
+    float: left;
+    margin: 0px;
+    padding: 4px 0px 0px 20px;
+    color: inherit;
+    border-radius: 0px;
+    min-width: 140px;
+}
+
+.skill-tag .badge {
+    background-color: gray;
+    color: white;
+
+}
+
+.skill-tag-wide {
+    min-width: 200px;
 }
