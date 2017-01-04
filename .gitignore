@@ -43,3 +43,6 @@ crashlytics.properties
 crashlytics-build.properties
 /nosync
 fabric.properties
+
+# mac stuff
+.DS_Store
