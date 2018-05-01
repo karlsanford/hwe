@@ -1,8 +1,8 @@
 {
-  "name": "hw",
+  "name": "SanfordConsulting.com",
   "version": "1.0.0",
-  "description": "hello world express app",
-  "main": "app.js",
+  "description": "Sanford Consulting MEAN app",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
